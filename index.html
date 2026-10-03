@@ -1,0 +1,586 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Alkemist — UX/UI Design Portfolio</title>
+  <meta name="description" content="Alkemist Studio — Editorial UX/UI and Product Design Studio.">
+  
+  <!-- Google Fonts: Antonio (Condensed Display) and Inter (Clean Body Sans) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Antonio:wght@400;500;600;700&family=Inter:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400;1,500&display=swap" rel="stylesheet">
+  
+  <!-- Tailwind CSS via CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            brandYellow: '#EFE42A',
+            brandDark: '#000000',
+          },
+          fontFamily: {
+            antonio: ['Antonio', 'sans-serif'],
+            inter: ['Inter', 'sans-serif'],
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+    body {
+      font-family: 'Inter', sans-serif;
+      color: #000000;
+      background-color: #FFFFFF;
+      overflow-x: hidden;
+      margin: 0;
+      padding: 0;
+      -webkit-font-smoothing: antialiased;
+    }
+    .font-display {
+      font-family: 'Antonio', sans-serif;
+    }
+    /* Infinite ticker animation */
+    @keyframes marquee {
+      0% { transform: translateX(0%); }
+      100% { transform: translateX(-50%); }
+    }
+    .marquee-track {
+      display: flex;
+      width: 200%;
+      animation: marquee 30s linear infinite;
+    }
+    .marquee-track:hover {
+      animation-play-state: paused;
+    }
+    /* Minimalist line inputs */
+    .line-input {
+      border: none;
+      border-bottom: 1px solid #000000;
+      background: transparent;
+      outline: none;
+      border-radius: 0;
+      width: 100%;
+      padding: 3px 0;
+      font-size: 13px;
+    }
+    .line-input:focus {
+      border-bottom: 2px solid #000000;
+    }
+  </style>
+</head>
+<body class="selection:bg-black selection:text-brandYellow">
+
+  <!-- ========================================== -->
+  <!-- SECTION 1: HERO SECTION                    -->
+  <!-- ========================================== -->
+  <header id="hero" class="relative bg-brandYellow w-full h-[800px] overflow-hidden border-b border-black">
+    
+    <!-- Top Left Brand -->
+    <div class="absolute top-[22px] left-12 z-30">
+      <a href="#" class="text-[12px] font-bold tracking-wider uppercase text-black">
+        ALKEMIST STUDIO
+      </a>
+    </div>
+
+    <!-- Top Right Nav / Home Link (sits over the circular cutout area) -->
+    <div class="absolute top-[24px] right-[240px] z-30">
+      <a href="#hero" class="text-[12px] font-bold tracking-wider uppercase text-black underline underline-offset-4">
+        HOME
+      </a>
+    </div>
+
+    <!-- Top Right Circular Photo Cutout (Masked exactly like reference) -->
+    <div class="absolute -top-16 -right-16 w-[640px] h-[640px] rounded-full overflow-hidden z-10 pointer-events-none bg-brandYellow">
+      <img 
+        src="https://placehold.co/800x800/d8d5cf/222222?text=Hero+Portrait" 
+        alt="Alkemist Creative Lead Portrait" 
+        class="w-full h-full object-cover filter grayscale contrast-115"
+      >
+    </div>
+
+    <!-- Main Title: EVERLINE STUDIO| -> ALKEMIST STUDIO| -->
+    <div class="absolute top-[215px] left-12 z-20">
+      <h1 class="font-display text-[112px] lg:text-[124px] font-bold leading-none tracking-tight uppercase select-none text-black flex items-center whitespace-nowrap">
+        <span>ALKEMIST STUDIO</span><span class="inline-block w-[4px] h-[0.82em] bg-black ml-2 animate-pulse"></span>
+      </h1>
+    </div>
+
+    <!-- Editorial Subtitle Paragraph -->
+    <div class="absolute top-[415px] left-12 z-20 max-w-[420px]">
+      <p class="text-[11px] font-medium tracking-wide uppercase leading-[1.65] text-black">
+        Alkemist Studio creates soulful, editorial-style digital products and styling for modern wellness, tech, and lifestyle brands. Rooted in intention, driven by detail, and captured with care.
+      </p>
+    </div>
+
+    <!-- Oval CTA Button -->
+    <div class="absolute top-[550px] left-12 z-20">
+      <a href="#contact" class="inline-flex items-center justify-center w-[285px] h-[95px] rounded-[50%/50%] border border-black bg-brandYellow text-black font-semibold text-[11px] tracking-widest uppercase hover:bg-black hover:text-brandYellow transition duration-300 shadow-sm text-center">
+        START YOUR PROJECT
+      </a>
+    </div>
+
+  </header>
+
+
+  <!-- ========================================== -->
+  <!-- SECTION 2: FOUNDER / ABOUT SECTION         -->
+  <!-- ========================================== -->
+  <section id="about" class="w-full bg-white border-b border-black flex flex-col lg:flex-row h-[700px] overflow-hidden">
+    
+    <!-- Left Column: Portrait (420px) + Yellow Ribbon (50px) = 470px -->
+    <div class="w-[470px] h-full flex border-r border-black shrink-0">
+      <!-- Portrait Image Frame -->
+      <div class="w-[420px] h-full bg-neutral-100 overflow-hidden shrink-0">
+        <img 
+          src="https://placehold.co/600x900/cfcdc7/111111?text=Founder+Art+Portrait" 
+          alt="Alkemist Founder Portrait" 
+          class="w-full h-full object-cover filter grayscale contrast-120"
+        >
+      </div>
+
+      <!-- Vertical Yellow Ribbon with Repeating Name rotated 90deg -->
+      <div class="w-[50px] bg-brandYellow border-l border-black flex flex-col justify-around items-center py-6 select-none shrink-0 overflow-hidden">
+        <div class="rotate-90 whitespace-nowrap text-[11px] font-bold uppercase tracking-widest text-black w-[120px] text-center">Meet Alkemist</div>
+        <div class="rotate-90 whitespace-nowrap text-[11px] font-bold uppercase tracking-widest text-black w-[120px] text-center">Meet Alkemist</div>
+        <div class="rotate-90 whitespace-nowrap text-[11px] font-bold uppercase tracking-widest text-black w-[120px] text-center">Meet Alkemist</div>
+        <div class="rotate-90 whitespace-nowrap text-[11px] font-bold uppercase tracking-widest text-black w-[120px] text-center">Meet Alkemist</div>
+      </div>
+    </div>
+
+    <!-- Right Column: Title, Bio, and Vintage Portrait -->
+    <div class="flex-1 flex flex-col justify-between p-12 lg:p-14">
+      <div>
+        <!-- Heading in Antonio -->
+        <h2 class="font-display text-[72px] lg:text-[76px] font-normal leading-[0.92] text-black tracking-tight">
+          Founder,<br>
+          Lead Designer &amp;<br>
+          Creative Director
+        </h2>
+
+        <!-- Bio Paragraph & Secondary Editorial Portrait side-by-side -->
+        <div class="mt-8 flex flex-row justify-between items-start gap-8">
+          <div class="max-w-[340px]">
+            <p class="text-[11px] font-medium uppercase tracking-wider leading-[1.7] text-black text-justify">
+              With a background in creative direction and a lifelong eye for nuance, Alkemist brings a refined, less-is-more approach to visual storytelling. She founded Alkemist Studio to serve thoughtful brands that value mood, meaning, and a quiet kind of magic. From wireframes to layout, every detail is intentionally composed—so your digital product doesn’t just look good, it feels right.
+            </p>
+          </div>
+          
+          <div class="w-[175px] h-[255px] border border-black p-[5px] bg-white shadow-sm shrink-0 mr-8">
+            <img 
+              src="https://placehold.co/350x510/e3e0db/222222?text=Archive+Portrait" 
+              alt="Vintage Studio Archive Portrait" 
+              class="w-full h-full object-cover filter grayscale contrast-110"
+            >
+          </div>
+        </div>
+      </div>
+
+      <!-- Bottom Spacer -->
+      <div></div>
+    </div>
+
+  </section>
+
+
+  <!-- ========================================== -->
+  <!-- SECTION 3: SERVICES SECTION                -->
+  <!-- ========================================== -->
+  <section id="services" class="w-full bg-white border-b border-black">
+    
+    <!-- Service Item 1 -->
+    <div class="group border-b border-black px-12 py-7 grid grid-cols-[420px_230px_1fr] gap-8 items-center hover:bg-neutral-50/40 transition">
+      <!-- Title -->
+      <div>
+        <h3 class="font-display text-[54px] font-normal leading-[0.9] text-black tracking-tight">
+          Brand Editorial<br>Shoots &amp; UX
+        </h3>
+      </div>
+      <!-- Thumbnail -->
+      <div class="w-[230px] h-[120px] overflow-hidden">
+        <img 
+          src="https://placehold.co/460x240/518F9C/FFFFFF?text=Brand+Editorial" 
+          alt="Brand Editorial Shoots & UX" 
+          class="w-full h-full object-cover group-hover:scale-105 transition duration-500"
+        >
+      </div>
+      <!-- Description -->
+      <div class="max-w-[420px]">
+        <p class="text-[11px] italic font-medium uppercase tracking-wider leading-[1.6] text-black">
+          Curated, story-driven sessions that translate your brand essence into elevated, magazine-worthy imagery. From product details to lifestyle scenes, every screen is crafted to connect emotionally and visually.
+        </p>
+      </div>
+    </div>
+
+    <!-- Service Item 2 -->
+    <div class="group border-b border-black px-12 py-7 grid grid-cols-[420px_230px_1fr] gap-8 items-center hover:bg-neutral-50/40 transition">
+      <!-- Title -->
+      <div>
+        <h3 class="font-display text-[54px] font-normal leading-[0.9] text-black tracking-tight">
+          Art Direction &amp;<br>Styling
+        </h3>
+      </div>
+      <!-- Thumbnail -->
+      <div class="w-[230px] h-[120px] overflow-hidden">
+        <img 
+          src="https://placehold.co/460x240/91483D/FFFFFF?text=Art+Direction" 
+          alt="Art Direction & Styling" 
+          class="w-full h-full object-cover group-hover:scale-105 transition duration-500"
+        >
+      </div>
+      <!-- Description -->
+      <div class="max-w-[420px]">
+        <p class="text-[11px] italic font-medium uppercase tracking-wider leading-[1.6] text-black">
+          Creative oversight to ensure your visuals are cohesive, intentional, and beautifully on-brand. Includes moodboarding, prop curation, set styling, and on-location direction for a seamless creative process.
+        </p>
+      </div>
+    </div>
+
+    <!-- Service Item 3 -->
+    <div class="group px-12 py-7 grid grid-cols-[420px_230px_1fr] gap-8 items-center hover:bg-neutral-50/40 transition">
+      <!-- Title -->
+      <div>
+        <h3 class="font-display text-[54px] font-normal leading-[0.9] text-black tracking-tight">
+          Content Suites<br>for Launches
+        </h3>
+      </div>
+      <!-- Thumbnail -->
+      <div class="w-[230px] h-[120px] overflow-hidden">
+        <img 
+          src="https://placehold.co/460x240/4A5859/FFFFFF?text=Content+Suites" 
+          alt="Content Suites for Launches" 
+          class="w-full h-full object-cover group-hover:scale-105 transition duration-500"
+        >
+      </div>
+      <!-- Description -->
+      <div class="max-w-[420px]">
+        <p class="text-[11px] italic font-medium uppercase tracking-wider leading-[1.6] text-black">
+          Custom imagery packages for product launches, campaigns, or seasonal storytelling. Delivered in versatile formats ideal for web, social, and press—tailored to align with your marketing goals.
+        </p>
+      </div>
+    </div>
+
+  </section>
+
+
+  <!-- ========================================== -->
+  <!-- SECTION 4: TESTIMONIAL SECTION             -->
+  <!-- ========================================== -->
+  <section id="testimonials" class="w-full bg-white h-[480px] border-b border-black text-center flex flex-col items-center justify-center px-12">
+    <!-- Section Title -->
+    <h2 class="font-display text-[82px] font-normal text-black tracking-tight leading-none">
+      What They’re Saying
+    </h2>
+
+    <!-- Quote Block -->
+    <blockquote class="mt-8 max-w-[550px]">
+      <p class="text-[12px] font-medium italic uppercase tracking-wider leading-[1.65] text-black">
+        “ALKEMIST DIDN’T JUST TAKE PHOTOS—SHE CAPTURED THE FEELING BEHIND OUR BRAND. WORKING WITH HER WAS SEAMLESS, INSPIRING, AND HONESTLY TRANSFORMATIVE. SHE UNDERSTOOD OUR VISION BEFORE WE COULD EVEN ARTICULATE IT.”
+      </p>
+      <footer class="mt-5 text-[11px] font-bold uppercase tracking-widest text-black">
+        — LILA C., FOUNDER OF SELAH SKINCARE
+      </footer>
+    </blockquote>
+  </section>
+
+
+  <!-- ========================================== -->
+  <!-- SECTION 5: WHY BRANDS CHOOSE US            -->
+  <!-- ========================================== -->
+  <section id="why-choose-us" class="w-full bg-white border-b border-black overflow-hidden">
+    
+    <!-- Marquee Banner: WHY BRANDS CHOOSE US -->
+    <div class="w-full py-3 border-b border-black overflow-hidden select-none bg-white">
+      <div class="marquee-track whitespace-nowrap">
+        <span class="font-display text-[52px] uppercase tracking-wider px-8 text-black">WHY BRANDS CHOOSE US</span>
+        <span class="font-display text-[52px] uppercase tracking-wider px-8 text-black">WHY BRANDS CHOOSE US</span>
+        <span class="font-display text-[52px] uppercase tracking-wider px-8 text-black">WHY BRANDS CHOOSE US</span>
+        <span class="font-display text-[52px] uppercase tracking-wider px-8 text-black">WHY BRANDS CHOOSE US</span>
+        <span class="font-display text-[52px] uppercase tracking-wider px-8 text-black">WHY BRANDS CHOOSE US</span>
+        <span class="font-display text-[52px] uppercase tracking-wider px-8 text-black">WHY BRANDS CHOOSE US</span>
+      </div>
+    </div>
+
+    <!-- Content: 6-row Table on Left, Portrait on Right -->
+    <div class="w-full px-12 py-12 flex flex-row justify-between items-start">
+      
+      <!-- Left: Boxed List / Table (580px wide) -->
+      <div class="w-[580px] shrink-0">
+        <div class="border border-black divide-y divide-black bg-white">
+          <!-- Row 1: Highlighted in Yellow -->
+          <div class="bg-brandYellow px-5 py-4 flex items-center min-h-[55px]">
+            <p class="text-[12px] font-semibold tracking-wide uppercase text-black">
+              EDITORIAL STYLE ROOTED IN STORYTELLING
+            </p>
+          </div>
+          <!-- Row 2 -->
+          <div class="bg-white px-5 py-4 flex items-center min-h-[55px] hover:bg-neutral-50 transition">
+            <p class="text-[12px] font-medium tracking-wide uppercase text-black">
+              SPECIALIZED IN WELLNESS, BEAUTY &amp; LIFESTYLE
+            </p>
+          </div>
+          <!-- Row 3 -->
+          <div class="bg-white px-5 py-4 flex items-center min-h-[55px] hover:bg-neutral-50 transition">
+            <p class="text-[12px] font-medium tracking-wide uppercase text-black">
+              IN-STUDIO OR NATURAL LIGHT LOCATION OPTIONS
+            </p>
+          </div>
+          <!-- Row 4 -->
+          <div class="bg-white px-5 py-4 flex items-center min-h-[55px] hover:bg-neutral-50 transition">
+            <p class="text-[12px] font-medium tracking-wide uppercase text-black">
+              SEAMLESS CREATIVE DIRECTION &amp; STYLING
+            </p>
+          </div>
+          <!-- Row 5 -->
+          <div class="bg-white px-5 py-4 flex items-center min-h-[55px] hover:bg-neutral-50 transition">
+            <p class="text-[12px] font-medium tracking-wide uppercase text-black">
+              DESIGNED FOR EMOTIONAL BRAND CONNECTION
+            </p>
+          </div>
+          <!-- Row 6 -->
+          <div class="bg-white px-5 py-4 flex items-center min-h-[55px] hover:bg-neutral-50 transition">
+            <p class="text-[12px] font-medium tracking-wide uppercase text-black">
+              TRUSTED BY THOUGHTFUL, FEMALE-FOUNDED BRANDS
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Right: Portrait Photo (exact aspect and styling) -->
+      <div class="w-[340px] h-[510px] bg-neutral-100 overflow-hidden">
+        <img 
+          src="https://placehold.co/680x1020/dedbd5/111111?text=Editorial+Styling+Shot" 
+          alt="Editorial Styling Shot" 
+          class="w-full h-full object-cover filter grayscale contrast-125"
+        >
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- ========================================== -->
+  <!-- SECTION 6: PAST PROJECTS                   -->
+  <!-- ========================================== -->
+  <section id="projects" class="w-full bg-white border-b border-black overflow-hidden">
+    
+    <!-- Marquee Banner: PAST PROJECTS -->
+    <div class="w-full py-3 border-b border-black overflow-hidden select-none bg-white">
+      <div class="marquee-track whitespace-nowrap">
+        <span class="font-display text-[52px] uppercase tracking-wider px-10 text-black">PAST PROJECTS</span>
+        <span class="font-display text-[52px] uppercase tracking-wider px-10 text-black">PAST PROJECTS</span>
+        <span class="font-display text-[52px] uppercase tracking-wider px-10 text-black">PAST PROJECTS</span>
+        <span class="font-display text-[52px] uppercase tracking-wider px-10 text-black">PAST PROJECTS</span>
+        <span class="font-display text-[52px] uppercase tracking-wider px-10 text-black">PAST PROJECTS</span>
+        <span class="font-display text-[52px] uppercase tracking-wider px-10 text-black">PAST PROJECTS</span>
+      </div>
+    </div>
+
+    <!-- 3 Staggered Columns Layout matching reference exactly -->
+    <div class="w-full px-12 pt-12 pb-24 flex flex-row justify-between items-start">
+      
+      <!-- Project 01 -->
+      <div class="w-[270px] flex flex-col">
+        <span class="text-[11px] font-mono font-semibold mb-2 text-black">01</span>
+        <div class="border border-black p-[5px] bg-white shadow-sm group">
+          <div class="w-full h-[390px] overflow-hidden">
+            <img 
+              src="https://placehold.co/540x780/64472c/EFE42A?text=Editorial+Campaign" 
+              alt="Editorial Campaign" 
+              class="w-full h-full object-cover group-hover:scale-105 transition duration-500"
+            >
+          </div>
+        </div>
+        <h4 class="font-display text-[20px] font-normal mt-3 text-black tracking-tight">
+          Editorial Campaign
+        </h4>
+      </div>
+
+      <!-- Project 02 (Staggered down by 140px) -->
+      <div class="w-[270px] flex flex-col mt-[140px]">
+        <span class="text-[11px] font-mono font-semibold mb-2 text-black">02</span>
+        <div class="border border-black p-[5px] bg-white shadow-sm group">
+          <div class="w-full h-[390px] overflow-hidden">
+            <img 
+              src="https://placehold.co/540x780/dedede/111111?text=Personal+Shoot" 
+              alt="Personal Shoot" 
+              class="w-full h-full object-cover filter grayscale contrast-120 group-hover:scale-105 transition duration-500"
+            >
+          </div>
+        </div>
+        <h4 class="font-display text-[20px] font-normal mt-3 text-black tracking-tight">
+          Personal Shoot
+        </h4>
+      </div>
+
+      <!-- Project 03 -->
+      <div class="w-[270px] flex flex-col">
+        <span class="text-[11px] font-mono font-semibold mb-2 text-black">03</span>
+        <div class="border border-black p-[5px] bg-white shadow-sm group">
+          <div class="w-full h-[390px] overflow-hidden">
+            <img 
+              src="https://placehold.co/540x780/8f7467/FFFFFF?text=Fashion+Shoots" 
+              alt="Fashion Shoots" 
+              class="w-full h-full object-cover group-hover:scale-105 transition duration-500"
+            >
+          </div>
+        </div>
+        <h4 class="font-display text-[20px] font-normal mt-3 text-black tracking-tight">
+          Fashion Shoots
+        </h4>
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- ========================================== -->
+  <!-- SECTION 7: CONTACT FORM ("GET IN TOUCH")    -->
+  <!-- ========================================== -->
+  <section id="contact" class="w-full bg-white h-[540px] px-12 border-b border-black flex flex-row items-center justify-between">
+    
+    <!-- Left: Giant Yellow Oval (520x330) -->
+    <div class="w-[520px] h-[330px] rounded-[50%/50%] border border-black bg-brandYellow flex items-center justify-center select-none shrink-0 hover:scale-[1.01] transition duration-300">
+      <h2 class="font-display text-[92px] font-bold uppercase tracking-tight text-black text-center leading-none">
+        GET IN TOUCH
+      </h2>
+    </div>
+
+    <!-- Right: Minimalist Form matching reference -->
+    <div class="w-[560px]">
+      <form class="space-y-6" onsubmit="event.preventDefault(); alert('Thank you for contacting Alkemist Studio!');">
+        
+        <!-- Name Row: Label NAME, then side-by-side FIRST NAME and LAST NAME -->
+        <div>
+          <label class="block text-[11px] font-bold uppercase tracking-wider text-black mb-1">NAME</label>
+          <div class="grid grid-cols-2 gap-8">
+            <div>
+              <span class="block text-[10px] uppercase font-medium text-black/60 mb-0.5">FIRST NAME</span>
+              <input type="text" required class="line-input">
+            </div>
+            <div>
+              <span class="block text-[10px] uppercase font-medium text-black/60 mb-0.5">LAST NAME</span>
+              <input type="text" required class="line-input">
+            </div>
+          </div>
+        </div>
+
+        <!-- Email Row -->
+        <div>
+          <label class="block text-[11px] font-bold uppercase tracking-wider text-black mb-0.5">EMAIL</label>
+          <input type="email" required class="line-input">
+        </div>
+
+        <!-- Subject Row -->
+        <div>
+          <label class="block text-[11px] font-bold uppercase tracking-wider text-black mb-0.5">SUBJECT</label>
+          <input type="text" required class="line-input">
+        </div>
+
+        <!-- Message Row -->
+        <div>
+          <label class="block text-[11px] font-bold uppercase tracking-wider text-black mb-0.5">MESSAGE</label>
+          <textarea rows="2" required class="line-input resize-none"></textarea>
+        </div>
+
+        <!-- Submit Button in Title Case ("Submit") -->
+        <div class="pt-2">
+          <button type="submit" class="w-full border border-black py-2.5 bg-transparent text-black font-bold text-[13px] tracking-normal hover:bg-black hover:text-white transition duration-300">
+            Submit
+          </button>
+        </div>
+
+      </form>
+    </div>
+
+  </section>
+
+
+  <!-- ========================================== -->
+  <!-- SECTION 8: FOOTER TICKER & PHOTO GRID      -->
+  <!-- ========================================== -->
+  <footer class="w-full bg-brandYellow border-b border-black overflow-hidden h-[289px] flex flex-col justify-between">
+    
+    <!-- Top Hours/Availability Ticker -->
+    <div class="w-full py-2 border-b border-black select-none overflow-hidden shrink-0">
+      <div class="marquee-track whitespace-nowrap">
+        <span class="text-[12px] uppercase tracking-wider font-normal px-6 text-black">SUNDAY: 12PM-11PM</span>
+        <span class="text-[12px] uppercase tracking-wider font-normal px-6 text-black">TUESDAY - THURSDAY: 11AM-9PM</span>
+        <span class="text-[12px] uppercase tracking-wider font-normal px-6 text-black">FRIDAY - SUNDAY: 12PM-11PM</span>
+        <span class="text-[12px] uppercase tracking-wider font-normal px-6 text-black">TUESDAY - THURSDAY: 11AM-9PM</span>
+        <span class="text-[12px] uppercase tracking-wider font-normal px-6 text-black">FRIDAY - SUNDAY: 12PM-11PM</span>
+        <span class="text-[12px] uppercase tracking-wider font-normal px-6 text-black">TUESDAY - THURSDAY: 11AM-9PM</span>
+      </div>
+    </div>
+
+    <!-- 6-Column Square Images Grid (matching color tones from reference) -->
+    <div class="w-full px-12 pt-3 pb-8">
+      <div class="grid grid-cols-6 gap-3">
+        
+        <!-- Shot 1: Burgundy fashion portrait -->
+        <div class="w-full aspect-square overflow-hidden shadow-sm">
+          <img 
+            src="https://placehold.co/400x400/521a22/FFFFFF?text=01" 
+            alt="Alkemist Grid Shot 01" 
+            class="w-full h-full object-cover hover:scale-105 transition duration-500"
+          >
+        </div>
+
+        <!-- Shot 2: Monochrome rocker portrait -->
+        <div class="w-full aspect-square overflow-hidden shadow-sm">
+          <img 
+            src="https://placehold.co/400x400/222222/FFFFFF?text=02" 
+            alt="Alkemist Grid Shot 02" 
+            class="w-full h-full object-cover filter grayscale hover:scale-105 transition duration-500"
+          >
+        </div>
+
+        <!-- Shot 3: Picnic lemons & flowers -->
+        <div class="w-full aspect-square overflow-hidden shadow-sm">
+          <img 
+            src="https://placehold.co/400x400/b89b3d/FFFFFF?text=03" 
+            alt="Alkemist Grid Shot 03" 
+            class="w-full h-full object-cover hover:scale-105 transition duration-500"
+          >
+        </div>
+
+        <!-- Shot 4: Studio leather portrait -->
+        <div class="w-full aspect-square overflow-hidden shadow-sm">
+          <img 
+            src="https://placehold.co/400x400/3d342a/FFFFFF?text=04" 
+            alt="Alkemist Grid Shot 04" 
+            class="w-full h-full object-cover hover:scale-105 transition duration-500"
+          >
+        </div>
+
+        <!-- Shot 5: Warm interior fashion -->
+        <div class="w-full aspect-square overflow-hidden shadow-sm">
+          <img 
+            src="https://placehold.co/400x400/404a36/FFFFFF?text=05" 
+            alt="Alkemist Grid Shot 05" 
+            class="w-full h-full object-cover hover:scale-105 transition duration-500"
+          >
+        </div>
+
+        <!-- Shot 6: Monochrome aesthetic hands -->
+        <div class="w-full aspect-square overflow-hidden shadow-sm">
+          <img 
+            src="https://placehold.co/400x400/d5d2cc/111111?text=06" 
+            alt="Alkemist Grid Shot 06" 
+            class="w-full h-full object-cover filter grayscale hover:scale-105 transition duration-500"
+          >
+        </div>
+
+      </div>
+    </div>
+
+  </footer>
+
+</body>
+</html>
